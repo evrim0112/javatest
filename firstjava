@@ -1,0 +1,14 @@
+// @semantic-block:auth_function:red:User authentication logic
+public void authenticate(String username, String password) {
+    if (username == null || password == null) {
+        throw new IllegalArgumentException("Credentials cannot be null");
+    }
+    // Authentication implementation
+}
+// @end-semantic-block:auth_function
+
+// @semantic-block:validation:green:Input validation
+public boolean validateInput(String input) {
+    return input != null && input.trim().length() > 0;
+}
+// @end-semantic-block:validation
