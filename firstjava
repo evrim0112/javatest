@@ -1,24 +1,24 @@
-// @semantic-block:logging:Application logging
+// @region:logging:Application logging
 public void logMessage(String level, String message) {
     if (!level.equals("INFO") && !level.equals("WARNING") && !level.equals("ERROR")) {
         throw new IllegalArgumentException("Invalid log level");
     }
     System.out.println("[" + level + "] " + message);
 }
-// @end-semantic-block:logging
+// @end-region:logging
 
 
-// @semantic-block:data_processing:Data transformation utilities
+// @region:data_processing:Data transformation utilities
 public String normalizeText(String text) {
     if (text == null) {
         return "";
     }
     return text.trim().toLowerCase();
 }
-// @end-semantic-block:data_processing
+// @end-region:data_processing
 
 
-// @semantic-block:math_utils:Mathematical helper functions
+// @region:math_utils:Mathematical helper functions
 public double calculateAverage(int[] numbers) {
     if (numbers == null || numbers.length == 0) {
         return 0;
@@ -29,10 +29,10 @@ public double calculateAverage(int[] numbers) {
     }
     return (double) sum / numbers.length;
 }
-// @end-semantic-block:math_utils
+// @end-region:math_utils
 
 
-// @semantic-block:date_utils:Date and time operations
+// @region:date_utils:Date and time operations
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -43,10 +43,10 @@ public String formatDate(LocalDateTime date, String pattern) {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern(pattern != null ? pattern : "yyyy-MM-dd");
     return date.format(formatter);
 }
-// @end-semantic-block:date_utils
+// @end-region:date_utils
 
 
-// @semantic-block:security:Security-related helpers
+// @region:security:Security-related helpers
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -68,4 +68,4 @@ public String hashPassword(String password) {
         throw new RuntimeException("Error hashing password", e);
     }
 }
-// @end-semantic-block:security
+// @end-region:security
